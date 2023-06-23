@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Relaxing SPA</title>
+  <style>
+    body {
+      background-color: #c0ffee;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    #landscape {
+      width: 400px;
+      height: 300px;
+      background-image: url('landscape.jpg');
+      background-size: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    #colorButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="landscape"></div>
+    <button id="colorButton">Change Color</button>
+  </div>
+
+  <script>
+    const colorButton = document.getElementById('colorButton');
+    const landscape = document.getElementById('landscape');
+    const colors = ['#c0ffee', '#ffcccc', '#ccffcc', '#ccccff', '#ffffcc'];
+
+    colorButton.addEventListener('click', () => {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    });
+  </script>
+</body>
+</html>
